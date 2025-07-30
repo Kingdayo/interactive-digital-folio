@@ -96,10 +96,10 @@ export const HeroSection = ({
             icon: Mail,
             href: '#',
             label: 'Email'
-          }].map((social, index) => <Button key={social.label} variant="ghost" size="icon" className="morph-button hover-scale group hover:glow-primary transition-all duration-300" style={{
+            }].map((social, index) => <Button key={social.label} variant="ghost" size="icon" className="morph-button hover-scale group hover:glow-primary hover:bg-background-secondary transition-all duration-300" style={{
             animationDelay: `${1.5 + index * 0.2}s`
           }}>
-                <social.icon className="w-6 h-6 group-hover:text-primary transition-colors duration-300" />
+                <social.icon className="w-6 h-6 group-hover:text-background transition-colors duration-300" />
                 <span className="sr-only">{social.label}</span>
               </Button>)}
           </div>
