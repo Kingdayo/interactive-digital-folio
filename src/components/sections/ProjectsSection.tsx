@@ -3,62 +3,49 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Filter } from 'lucide-react';
-
-const projects = [
-  {
-    id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A modern, responsive e-commerce platform with real-time inventory and payment processing.',
-    image: '/placeholder.svg',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    category: 'Full-Stack',
-    demoUrl: '#',
-    codeUrl: '#'
-  },
-  {
-    id: 2,
-    title: 'AI-Powered Dashboard',
-    description: 'Interactive dashboard with machine learning insights and predictive analytics.',
-    image: '/placeholder.svg',
-    technologies: ['Vue.js', 'Python', 'TensorFlow', 'D3.js'],
-    category: 'Data Visualization',
-    demoUrl: '#',
-    codeUrl: '#'
-  },
-  {
-    id: 3,
-    title: 'Mobile Fitness App',
-    description: 'Cross-platform mobile app for fitness tracking with social features.',
-    image: '/placeholder.svg',
-    technologies: ['React Native', 'Firebase', 'Redux'],
-    category: 'Mobile',
-    demoUrl: '#',
-    codeUrl: '#'
-  },
-  {
-    id: 4,
-    title: '3D Portfolio Website',
-    description: 'Immersive 3D portfolio website with WebGL animations and interactions.',
-    image: '/placeholder.svg',
-    technologies: ['Three.js', 'GSAP', 'WebGL', 'TypeScript'],
-    category: 'Creative',
-    demoUrl: '#',
-    codeUrl: '#'
-  }
-];
-
+const projects = [{
+  id: 1,
+  title: 'E-Commerce Platform',
+  description: 'A modern, responsive e-commerce platform with real-time inventory and payment processing.',
+  image: '/placeholder.svg',
+  technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+  category: 'Full-Stack',
+  demoUrl: '#',
+  codeUrl: '#'
+}, {
+  id: 2,
+  title: 'AI-Powered Dashboard',
+  description: 'Interactive dashboard with machine learning insights and predictive analytics.',
+  image: '/placeholder.svg',
+  technologies: ['Vue.js', 'Python', 'TensorFlow', 'D3.js'],
+  category: 'Data Visualization',
+  demoUrl: '#',
+  codeUrl: '#'
+}, {
+  id: 3,
+  title: 'Mobile Fitness App',
+  description: 'Cross-platform mobile app for fitness tracking with social features.',
+  image: '/placeholder.svg',
+  technologies: ['React Native', 'Firebase', 'Redux'],
+  category: 'Mobile',
+  demoUrl: '#',
+  codeUrl: '#'
+}, {
+  id: 4,
+  title: '3D Portfolio Website',
+  description: 'Immersive 3D portfolio website with WebGL animations and interactions.',
+  image: '/placeholder.svg',
+  technologies: ['Three.js', 'GSAP', 'WebGL', 'TypeScript'],
+  category: 'Creative',
+  demoUrl: '#',
+  codeUrl: '#'
+}];
 const categories = ['All', 'Full-Stack', 'Data Visualization', 'Mobile', 'Creative'];
-
 export const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
-
-  return (
-    <section id="projects" className="py-20 relative">
+  const filteredProjects = activeFilter === 'All' ? projects : projects.filter(project => project.category === activeFilter);
+  return <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -71,34 +58,13 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeFilter === category ? "default" : "outline"}
-              onClick={() => setActiveFilter(category)}
-              className={`morph-button transition-all duration-300 ${
-                activeFilter === category 
-                  ? 'bg-gradient-primary glow-primary' 
-                  : 'border-primary/50 hover:border-primary'
-              }`}
-            >
-              <Filter className="w-4 h-4 mr-2" />
-              {category}
-            </Button>
-          ))}
-        </div>
+        
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Card
-              key={project.id}
-              className="glass-card overflow-hidden group hover:glow-primary transition-all duration-500 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
+          {filteredProjects.map((project, index) => <Card key={project.id} className="glass-card overflow-hidden group hover:glow-primary transition-all duration-500 animate-fade-in-up" style={{
+          animationDelay: `${index * 0.2}s`
+        }} onMouseEnter={() => setHoveredProject(project.id)} onMouseLeave={() => setHoveredProject(null)}>
               {/* Project Image */}
               <div className="relative h-48 bg-gradient-secondary overflow-hidden">
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -107,9 +73,7 @@ export const ProjectsSection = () => {
                 </div>
                 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-background/90 backdrop-blur-sm flex items-center justify-center gap-4 transition-all duration-300 ${
-                  hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
-                }`}>
+                <div className={`absolute inset-0 bg-background/90 backdrop-blur-sm flex items-center justify-center gap-4 transition-all duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'}`}>
                   <Button size="sm" className="morph-button glow-primary">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Demo
@@ -134,39 +98,24 @@ export const ProjectsSection = () => {
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <Badge 
-                      key={tech}
-                      variant="secondary"
-                      className="morph-button hover-scale"
-                    >
+                  {project.technologies.map(tech => <Badge key={tech} variant="secondary" className="morph-button hover-scale">
                       {tech}
-                    </Badge>
-                  ))}
+                    </Badge>)}
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
-                  <Button 
-                    size="sm" 
-                    className="flex-1 morph-button bg-gradient-primary hover:scale-105 transition-transform duration-300"
-                  >
+                  <Button size="sm" className="flex-1 morph-button bg-gradient-primary hover:scale-105 transition-transform duration-300">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="morph-button border-primary/50 hover:border-primary"
-                  >
+                  <Button variant="outline" size="sm" className="morph-button border-primary/50 hover:border-primary">
                     <Github className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
-            </Card>
-          ))}
+            </Card>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
