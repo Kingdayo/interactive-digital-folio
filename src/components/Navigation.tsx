@@ -56,7 +56,21 @@ export const Navigation = ({
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {navItems.map(item => {})}
+              {navItems.map(item => (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  onClick={() => handleNavClick(item.id)}
+                  className={`morph-button ${
+                    activeSection === item.id 
+                      ? 'text-primary glow-primary' 
+                      : 'text-foreground-muted hover:text-background hover:bg-foreground'
+                  }`}
+                >
+                  <item.icon className="w-4 h-4 mr-2" />
+                  {item.label}
+                </Button>
+              ))}
             </div>
 
             {/* Mobile Menu Button */}
