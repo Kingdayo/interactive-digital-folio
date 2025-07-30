@@ -152,7 +152,7 @@ export const ContactSection = () => {
                     className="flex items-center space-x-4 text-foreground-muted group-hover:text-background transition-colors duration-300"
                   >
                     <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <info.icon className="w-6 h-6 text-primary-foreground" />
+                      <info.icon className="w-6 h-6 text-primary-foreground group-hover:text-black transition-colors duration-300" />
                     </div>
                     <div>
                       <p className="text-sm text-foreground-muted">{info.label}</p>
