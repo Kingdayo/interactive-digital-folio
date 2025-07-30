@@ -187,7 +187,7 @@ export const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-foreground-muted">{info.label}</p>
-                      <p className="text-lg font-medium">{info.value}</p>
+                      <p className="text-lg font-medium text-white group-hover:text-white">{info.value}</p>
                     </div>
                   </a>
                 </Card>
