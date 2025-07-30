@@ -5,10 +5,8 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
-
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
-
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'projects', 'contact'];
@@ -20,32 +18,26 @@ const Index = () => {
         }
         return false;
       });
-
       if (currentSection) {
         setActiveSection(currentSection);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
     }
   };
-
   const scrollToNext = () => {
     scrollToSection('about');
   };
-
-  return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
+  return <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       {/* Particle Background */}
       <ParticleBackground />
       
@@ -72,13 +64,9 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 border-t border-border/50 text-center">
         <div className="container mx-auto px-6">
-          <p className="text-foreground-muted">
-            © 2024 Alex Johnson. Crafted with passion and innovation.
-          </p>
+          <p className="text-foreground-muted">© 2025 Ekundayo King. Crafted with passion and innovation.</p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
