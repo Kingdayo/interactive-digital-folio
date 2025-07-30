@@ -10,19 +10,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'alex@portfolio.dev',
-    href: 'mailto:alex@portfolio.dev'
+    value: '1kingdayo@gmail.com',
+    href: 'mailto:1kingdayo@gmail.com'
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567'
+    value: '+234 811 519 5486',
+    href: 'tel:+2348115195486'
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Lagos, Nigeria',
     href: '#'
   }
 ];
@@ -170,7 +170,10 @@ export const ContactSection = () => {
                 Let's discuss how we can bring your vision to life
               </p>
               <Button className="morph-button bg-gradient-primary hover:scale-105 transition-transform duration-300 glow-primary">
-                Schedule a Call
+                <a href="tel:+2348115195486" className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Schedule a Call
+                </a>
               </Button>
             </div>
           </div>

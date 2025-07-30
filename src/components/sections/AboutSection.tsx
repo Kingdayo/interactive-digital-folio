@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Code, Palette, Rocket, Users } from 'lucide-react';
-const skills = ['React', 'TypeScript', 'Node.js', 'Python', 'GraphQL', 'MongoDB', 'AWS', 'Docker', 'Kubernetes', 'Figma', 'Three.js', 'GSAP'];
+const skills = ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Vite', 'React', 'Tailwind CSS', 'Sass', 'TypeScript', 'Bootstrap', 'Multiple Factor Authentication', 'OAuth', 'JSON', 'Microsoft Applications', 'jQuery', 'REST APIs'];
 const highlights = [{
   icon: Code,
   title: 'Full-Stack Development',

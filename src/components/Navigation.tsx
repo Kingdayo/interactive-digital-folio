@@ -56,7 +56,7 @@ export const Navigation = ({
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              {navItems.map(item => <Button key={item.id} variant="ghost" onClick={() => handleNavClick(item.id)} className={`morph-button relative group transition-all duration-300 ${activeSection === item.id ? 'text-primary glow-primary' : 'text-foreground-muted hover:text-primary'}`}>
+              {navItems.map(item => <Button key={item.id} variant="ghost" onClick={() => handleNavClick(item.id)} className={`morph-button relative group transition-all duration-300 ${activeSection === item.id ? 'text-primary glow-primary' : 'text-foreground-muted hover:text-background hover:bg-foreground'}`}>
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
                   {activeSection === item.id && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary glow-primary animate-slide-up" />}
@@ -76,7 +76,7 @@ export const Navigation = ({
           <div className="absolute inset-0 bg-background/80 backdrop-blur-md" onClick={() => setIsOpen(false)} />
           <div className="absolute top-20 left-4 right-4 glass-card p-6 animate-slide-up">
             <div className="space-y-4">
-              {navItems.map(item => <Button key={item.id} variant="ghost" onClick={() => handleNavClick(item.id)} className={`w-full justify-start morph-button ${activeSection === item.id ? 'text-primary glow-primary' : 'text-foreground-muted'}`}>
+              {navItems.map(item => <Button key={item.id} variant="ghost" onClick={() => handleNavClick(item.id)} className={`w-full justify-start morph-button ${activeSection === item.id ? 'text-primary glow-primary' : 'text-foreground-muted hover:text-background hover:bg-foreground'}`}>
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
                 </Button>)}
