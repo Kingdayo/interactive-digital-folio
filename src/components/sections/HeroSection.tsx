@@ -98,7 +98,7 @@ export const HeroSection = ({
             label: 'Email'
           }].map((social, index) => <Button key={social.label} variant="ghost" size="icon" style={{
             animationDelay: `${1.5 + index * 0.2}s`
-          }} className="morph-button hover-scale group hover:glow-primary transition-all duration-300 bg-indigo-800 hover:bg-indigo-700">
+          }} className="morph-button group hover:glow-primary transition-all duration-300 bg-indigo-800 hover:bg-indigo-700 hover:scale-110 active:scale-95">
                 <social.icon className="w-6 h-6 text-white group-hover:text-white transition-colors duration-300" />
                 <span className="sr-only">{social.label}</span>
               </Button>)}
