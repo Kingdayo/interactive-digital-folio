@@ -175,7 +175,7 @@ export const ContactSection = () => {
               {contactInfo.map((info, index) => (
                 <Card
                   key={info.label}
-                  className="glass-card p-6 hover:glow-primary transition-all duration-300 hover-scale group animate-fade-in-up"
+                  className="glass-card p-6 hover:glow-primary transition-all duration-300 group animate-fade-in-up hover:scale-110 active:scale-95"
                   style={{ animationDelay: `${0.5 + index * 0.1}s` }}
                 >
                   <a 
