@@ -14,10 +14,6 @@ const navItems = [{
   label: 'About',
   icon: User
 }, {
-  id: 'experience',
-  label: 'Experience',
-  icon: Briefcase
-}, {
   id: 'projects',
   label: 'Projects',
   icon: Code
